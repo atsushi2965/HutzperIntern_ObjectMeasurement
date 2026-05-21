@@ -21,7 +21,7 @@ public static class ColorPreset
                 cfg.HMax              = 35;
                 cfg.SMin              = 60;   // 低彩度でも捉えるため低めに設定
                 cfg.SMax              = 255;
-                cfg.VMin              = 140;  // 暗い影領域は除外
+                cfg.VMin              = 150;  // 暗い影領域は除外
                 cfg.VMax              = 255;
                 cfg.UseSecondaryRange = false;
                 cfg.MorphKernelSize   = 25;   // 表面の凹凸を埋める大きめカーネル
@@ -36,7 +36,7 @@ public static class ColorPreset
                 // 第1範囲：高 H 側の赤（170-180）
                 cfg.HMin              = 170;
                 cfg.HMax              = 180;
-                cfg.SMin              = 80;
+                cfg.SMin              = 140;
                 cfg.SMax              = 255;
                 cfg.VMin              = 60;
                 cfg.VMax              = 255;
@@ -44,12 +44,12 @@ public static class ColorPreset
                 cfg.UseSecondaryRange = true;
                 cfg.HMin2             = 0;
                 cfg.HMax2             = 10;
-                cfg.SMin2             = 80;
+                cfg.SMin2             = 140;
                 cfg.SMax2             = 255;
                 cfg.VMin2             = 60;
                 cfg.VMax2             = 255;
-                cfg.MorphKernelSize   = 11;
-                cfg.MinAreaPixels     = 500;
+                cfg.MorphKernelSize   = 7;
+                cfg.MinAreaPixels     = 3000;
             },
 
             // ── 白い皿 ────────────────────────────────────────────────────
