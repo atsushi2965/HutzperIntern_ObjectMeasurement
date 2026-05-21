@@ -1,7 +1,7 @@
 # ObjectMeasurement
 
 上面から撮影した**単一色の物体**を画像から抽出し、**幅**と**長さ**を mm 単位で計測して出力する C# / .NET 8 アプリケーションです。  
-画像処理には [OpenCvSharp4](https://github.com/shimat/opencvsharp) を使用しています。
+画像処理には [OpenCvSharp4](../../../../shimat/opencvsharp) を使用しています。
 
 ---
 
@@ -27,8 +27,8 @@
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/<your-username>/ObjectMeasurement.git
-cd ObjectMeasurement
+git clone https://github.com/atsushi2965/HutzperIntern_ObjectMeasurement.git
+cd HutzperIntern_ObjectMeasurement
 
 # ビルド（Release）
 dotnet build -c Release ObjectMeasurement.sln
@@ -161,7 +161,7 @@ dotnet test ObjectMeasurement.sln
 === ObjectMeasurement v1.0 ===
 
 --- 実行設定 ---
-  画像       : omurice.png
+  画像       : オムライス画像.png
   スケール   : 0.2 mm/px
   プリセット : omurice
   HSV 第1範囲: H[15-35] S[60-255] V[140-255]
@@ -172,12 +172,12 @@ dotnet test ObjectMeasurement.sln
 検出数: 1 件
 ────────────────────────────────────────────────────────────
 オブジェクト #1
-  幅 (Width)  :   148.64 mm  (   743.2 px)
-  長さ(Length):   252.40 mm  (  1262.0 px)
-  面積        :    745300 px²
-  重心        : (1512.3, 1820.6) px
-  傾き        :  -15.3°
-  アスペクト比: 1.70
+  幅 (Width)  :    79.55 mm  (   397.8 px)
+  長さ(Length):   168.26 mm  (   841.3 px)
+  面積        :     250554 px²
+  重心        : (496.7, 666.4) px
+  傾き        :   57.3°
+  アスペクト比: 2.12
 ────────────────────────────────────────────────────────────
 ```
 

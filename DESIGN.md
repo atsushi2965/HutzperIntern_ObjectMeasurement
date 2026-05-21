@@ -166,10 +166,10 @@ HSV パラメータのチューニング作業が大幅に効率化される。
 
 ### 妥当性確認
 
-- **HSV 閾値値の確認**：OpenCV の HSV 仕様（H: 0–179, S/V: 0–255）を公式ドキュメントと照合。
+- **HSV 閾値値の確認**：OpenCV の HSV 仕様（H: 0–179, S/V: 0–255）を[公式ドキュメント](//docs.opencv.org/4.13.0/df/d9d/tutorial_py_colorspaces.html#:~:text=For%20HSV%2C%20hue%20range%20is%20[0%2C179]%2C%20saturation%20range%20is%20[0%2C255]%2C%20and%20value%20range%20is%20[0%2C255].%20Different%20software%20use%20different%20scales.%20So%20if%20you%20are%20comparing%20OpenCV%20values%20with%20them%2C%20you%20need%20to%20normalize%20these%20ranges.)と照合。
 - **MinAreaRect の Size 解釈**：`Size.Width` と `Size.Height` の大小関係は保証されないことを
-  OpenCvSharp の API ドキュメントおよびソースで確認し、`Math.Min/Max` で短辺・長辺を振り分けた。
-- **Closing → Opening の順序**：参考文献（Gonzalez & Woods, Digital Image Processing）で
+  OpenCvSharp の [API ドキュメント](//docs.opencv.org/4.13.0/d3/dc0/group__imgproc__shape.html#ga3d476a3417130ae5154aea421ca7ead9)および[ソース](../../../../shimat/opencvsharp/blob/main/src/OpenCvSharp/Modules/core/Struct/RotatedRect.cs)で確認し、`Math.Min/Max` で短辺・長辺を振り分けた。
+- **Closing → Opening の順序**：[参考文献](//docs.opencv.org/4.13.0/d9/d61/tutorial_py_morphological_ops.html)で
   穴埋めには先に Closing が有効であることを確認した。
 - **テストコード**：AI 出力のテストをそのまま使用せず、アサーション条件・境界値を手動でレビュー。
-  特に `AspectRatio` が `WidthMm == 0` の時に `NaN` を返すべき仕様を明示的にテストに追加した。
+  特に `AspectRatio` が `WidthMm == 0` の時に `NaN` を返すべき仕様を[明示的にテストに追加](tests/ObjectMeasurement.Tests/ImageProcessorTests.cs#L142)した。
